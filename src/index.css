@@ -3,6 +3,9 @@
 body {
   margin: auto;
   font-family: 'Inria Serif', serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 h1, h3 {
@@ -24,33 +27,39 @@ a:hover {
 }
 
 .mainbox {
+  display: flex;
   height: 600px;
   margin-top: 140px;
   background-color: rgb(255, 245, 239);
-  display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
+  flex: 1;
+  padding: 20px;
 }
 
 .headbox {
   background-color: rgb(132, 75, 75);
   color: white;
-  height: 120px;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 20px;
 }
 
 .nametitle {
   display: flex;
   flex-direction: column;
-  margin-left: 50px;
+  margin-left: 2%;
 }
 
 nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
   margin-left: 550px;
   font-size: 20pt;
-  display: flex;
-  gap: 100px;
+  width: 36%;
 }
 
 nav a {
@@ -64,16 +73,17 @@ nav a:hover {
 }
 
 .profilebox {
-  margin-left: 100px;
-  width: 451px;
-  height: 451px;
-  flex-shrink: 0;
+  max-width: 450px;
+  height: auto;
   display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-left: 5%;
 }
 
 .profilebox img {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
   border-radius: 50%;
   border: 9px solid rgb(218, 119, 89);
@@ -81,6 +91,7 @@ nav a:hover {
 
 .textbox {
   margin: 0 300px 0 200px;
+  max-width: 800px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -116,8 +127,8 @@ hr {
 footer {
   display: flex;
   justify-content: center;
-  gap: 35px;
-  margin-top: 50px;
+  gap: 25px;
+  padding: 25px 0;
 }
 
 .linkedin, .github {
@@ -137,4 +148,139 @@ footer {
 
 .italicspan {
   font-style: italic;
+}
+
+@media (max-width: 1024px) {
+  .headbox {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  nav {
+    margin-left: 0;
+    justify-content: center;
+    font-size: 16pt;
+    width: 100%;
+    display: flex; /* Ensures links stay in a row */
+    flex-wrap: wrap; /* Allows wrapping to a new line if necessary */
+    gap: 10px;
+  }
+
+  .profilebox {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 20px;
+  }
+
+  .textbox {
+    margin: 0 20px;
+    max-width: 90%;
+  }
+
+  .quote {
+    font-size: 30px;
+  }
+
+  .welcome {
+    font-size: 36px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  hr {
+    width: 100%;
+  }
+
+  footer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allows the icons to stay in a row */
+    gap: 15px;
+  }
+
+  .linkedin, .github {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainbox {
+    flex-direction: column;
+    height: auto;
+    margin-top: 80px;
+  }
+
+  .headbox {
+    padding: 10px;
+  }
+
+  nav {
+    flex-direction: row; /* Keeps nav links horizontal */
+    justify-content: center;
+    width: 100%;
+    font-size: 14pt;
+    gap: 10px;
+  }
+
+  .profilebox {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .textbox {
+    margin: 0 10px;
+    max-width: 95%;
+  }
+
+  .quote {
+    font-size: 24px;
+  }
+
+  .welcome {
+    font-size: 28px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  hr {
+    width: 100%;
+  }
+
+  footer {
+    flex-direction: row; /* Keeps footer icons horizontal */
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  nav a {
+    font-size: 12pt;
+  }
+
+  .quote {
+    font-size: 20px;
+  }
+
+  .welcome {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .linkedin, .github {
+    width: 25px;
+    height: 25px;
+  }
 }
