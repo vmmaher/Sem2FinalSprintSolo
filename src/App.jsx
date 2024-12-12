@@ -6,7 +6,7 @@ import Contact from "./Contact";
 
 function App() {
   const [darkMode, setDarkMode] = useState(
-    () => localStorage.getItem("theme") === "dark" // Persist preference
+    () => localStorage.getItem("theme") === "dark"
   );
 
   useEffect(() => {
